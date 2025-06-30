@@ -109,6 +109,7 @@
 
 // Projects.jsx
 import React from "react";
+import { Link } from "react-router-dom";
 import roommateFinder from "../assets/images/project1.png";
 import foodExpiryTracker from "../assets/images/project3.png";
 import freshFarmers from "../assets/images/project4.png";
@@ -117,15 +118,16 @@ import {
   SiOpenai, SiShadcnui 
 } from "react-icons/si";
 import { FaLink } from "react-icons/fa";
-
+ 
 const projects = [
   {
+    id: "roommate-finder",
     name: "RoomMate Finder",
     image: roommateFinder,
     description:
       "A web app to post or find roommate listings based on location, lifestyle, and preferences. Includes filters, real-time updates, and a user-friendly interface for easy roommate discovery and connection.",
-    liveLink: "https://roommatefinder.example.com",
-    githubLink: "https://github.com/your-username/roommate-finder-client",
+    liveLink: "https://roommate-finder-e1587.web.app/",
+    githubLink: "https://github.com/redoy49/roommate-finder",
     techStack: [
       { name: "React", icon: <SiReact color="#61DAFB" /> },
       { name: "Firebase", icon: <SiFirebase color="#FFCA28" /> },
@@ -134,12 +136,13 @@ const projects = [
     ],
   },
   {
+    id: "expiry-tracker",
     name: "Expiry Tracker",
     image: foodExpiryTracker,
     description:
       "An AI-powered app to track food expiry dates, helping users reduce waste and manage groceries. It sends reminders, suggests usage ideas, and provides a visual timeline for better pantry management.",
-    liveLink: "https://aicontent.example.com",
-    githubLink: "https://github.com/your-username/ai-content-client",
+    liveLink: "https://food-expiry-tracker-e6971.web.app/",
+    githubLink: "https://github.com/redoy49/food-expiry-tracker",
     techStack: [
       { name: "React", icon: <SiReact color="#61DAFB" /> },
       { name: "OpenAI API", icon: <SiOpenai color="#412991" /> },
@@ -147,17 +150,17 @@ const projects = [
     ],
   },
   {
+    id: "fresh-farmers",
     name: "Fresh Farmers",
     image: freshFarmers,
     description:
-      "A web app to post or find roommate listings based on location, lifestyle, and preferences. Includes filters, real-time updates, and a user-friendly interface for easy roommate discovery and connection.",
-    liveLink: "https://yourportfolio.com",
-    githubLink: "https://github.com/your-username/portfolio-client",
+      "A platform to connect farmers with local consumers, showcasing fresh produce and local farm goods. Includes marketplace features and responsive UI.",
+    liveLink: "https://subscription-box-df504.web.app/",
+    githubLink: "https://github.com/redoy49/fresh-farmers",
     techStack: [
       { name: "React", icon: <SiReact color="#61DAFB" /> },
       { name: "TailwindCSS", icon: <SiTailwindcss color="#38BDF8" /> },
       { name: "Shadcn/UI", icon: <SiShadcnui color="#000" /> },
-      // { name: "EmailJS", icon: <SiEmailjs color="#FF6A00" /> },
     ],
   },
 ];
@@ -199,11 +202,7 @@ const Projects = () => {
               {/* Tech Icons */}
               <div className="flex flex-wrap gap-4 mt-6">
                 {project.techStack.map((tech, idx) => (
-                  <div
-                    key={idx}
-                    className="text-2xl"
-                    title={tech.name}
-                  >
+                  <div key={idx} className="text-2xl" title={tech.name}>
                     {tech.icon}
                   </div>
                 ))}
@@ -216,7 +215,7 @@ const Projects = () => {
                   rel="noopener noreferrer"
                   className="flex items-center gap-1.5 text-sm sm:text-base px-3 py-1.5 sm:px-4 sm:py-2 rounded-full font-medium transition bg-[#7081C8] hover:bg-[#5a6bb5] text-white"
                 >
-                  <FaLink size={14}  className="text-base sm:text-lg" />
+                  <FaLink size={14} className="text-base sm:text-lg" />
                   Live Site
                 </a>
                 <a
@@ -227,9 +226,12 @@ const Projects = () => {
                 >
                   GitHub Code
                 </a>
-                <button className="text-sm sm:text-base px-3 py-1.5 sm:px-4 sm:py-2 rounded-full transition border border-[#7081C8] text-[#7081C8] hover:bg-[#7081C8] hover:text-white">
+                <Link
+                  to={`/projects/${project.id}`}
+                  className="text-sm sm:text-base px-3 py-1.5 sm:px-4 sm:py-2 rounded-full transition border border-[#7081C8] text-[#7081C8] hover:bg-[#7081C8] hover:text-white"
+                >
                   View Details
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -240,3 +242,4 @@ const Projects = () => {
 };
 
 export default Projects;
+

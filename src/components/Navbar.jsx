@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../assets/images/logo.png";
+// import logo from "../assets/images/logo.png";
 import menuBlack from "../assets/images/menu-black.png";
 import arrowIcon from "../assets/images/arrow-icon.png";
 import arrowIconDark from "../assets/images/arrow-icon-dark.png";
@@ -28,7 +28,8 @@ const Navbar = () => {
         {/* Wrapper div to center nav content with max-width 1600px */}
         <div className="w-full max-w-[1600px] mx-auto flex items-center justify-between">
           <a href="#home" className="flex items-center">
-            <img src={logo} alt="Logo" className="w-28 cursor-pointer mr-14" />
+            {/* <img src={logo} alt="Logo" className="w-28 cursor-pointer mr-14" /> */}
+            <h2 className="text-2xl lg:text-3xl font-bold">Ridoy<span className="text-3xl text-green-500">.</span></h2>
           </a>
 
           <ul className="hidden lg:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 bg-white/50 shadow-sm list-none">
