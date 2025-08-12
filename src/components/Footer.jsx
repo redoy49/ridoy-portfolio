@@ -15,7 +15,7 @@ const Footer = () => {
         {/* Social Icons */}
         <div className="flex items-center gap-5 text-lg">
           <a
-            href="https://www.linkedin.com/in/your-linkedin"
+            href="https://www.linkedin.com/in/redoy49"
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-500 hover:text-blue-600 transition"
@@ -24,7 +24,7 @@ const Footer = () => {
             <ImLinkedin size={24} />
           </a>
           <a
-            href="https://github.com/your-github"
+            href="https://github.com/redoy49"
             target="_blank"
             rel="noopener noreferrer"
             className="text-slate-600 hover:text-slate-700 transition"
@@ -33,7 +33,7 @@ const Footer = () => {
             <FaGithub size={24} />
           </a>
           <a
-            href="https://www.instagram.com/your-instagram"
+            href="https://www.instagram.com/mdredoyhasan49"
             target="_blank"
             rel="noopener noreferrer"
             className="text-pink-400 hover:text-pink-500 transition"
